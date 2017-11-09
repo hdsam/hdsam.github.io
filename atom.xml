@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-09T04:57:35.285Z</updated>
+  <updated>2017-11-09T05:00:11.887Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2017/11/09/javaweb%E4%B8%AD%E9%98%B2%E6%AD%A2XSS%E6%94%BB%E5%87%BB%E7%9A%84%E5%87%A0%E7%A7%8D%E5%8A%9E%E6%B3%95/"/>
     <id>http://yoursite.com/2017/11/09/javaweb中防止XSS攻击的几种办法/</id>
     <published>2017-11-09T11:01:57.000Z</published>
-    <updated>2017-11-09T04:57:35.285Z</updated>
+    <updated>2017-11-09T05:00:11.887Z</updated>
     
     <content type="html"><![CDATA[<p>最近在用java写个人博客系统，发现了如果用户提交数据到数据库，然后又从数据库取出显示到页面上，这一过程中存在的安全问题。<br><a id="more"></a></p><h1 id="javaweb中防止XSS攻击的简单解决办法"><a href="#javaweb中防止XSS攻击的简单解决办法" class="headerlink" title="javaweb中防止XSS攻击的简单解决办法"></a>javaweb中防止XSS攻击的简单解决办法</h1><h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p> 最开始在写前端页面时，发现不知如何处理富文本，就仅仅是用一个textare标签提交文章内容，但如果你提交中包含HTML标签或包含CSS样式时，如果对提交的内容不加任何处理的话， 仅通过Jsp页面EL表达式简单输出时，那么凡是能访问该页面的所有用户的显示都会受到影响。如果提交的内容包含JavaScript代码的话，代码会在访问该页面被执行，危害性更大，比如会触发弹窗，改写网页内容，或窃取用户Cookie等，以下是wikiPedia的解释：</p><blockquote><p><a href="https://zh.wikipedia.org/wiki/%E8%B7%A8%E7%B6%B2%E7%AB%99%E6%8C%87%E4%BB%A4%E7%A2%BC" target="_blank" rel="external">跨站脚本</a>（英语：Cross-site scripting，通常简称为：XSS）是一种网站应用程序的安全漏洞攻击，是代码注入的一种。它允许恶意用户将代码注入到网页上，其他用户在观看网页时就会受到影响。这类攻击通常包含了HTML以及用户端脚本语言。</p></blockquote><h2 id="XSS的防范"><a href="#XSS的防范" class="headerlink" title="XSS的防范"></a>XSS的防范</h2><p> 按Http请求的流程,在四个阶段可做处理。</p><h5 id="后端处理"><a href="#后端处理" class="headerlink" title="后端处理"></a>后端处理</h5><p>1.后端输入时过滤，可以对用户提交数据做过滤，比如是对HttpServletRequest中，通过getParameter(“xxx”)获取值后做字符过滤，具体使用到可配置过滤器对请求包装成HttpServletRequestWrapper对象，然后在交由Controller处理。</p><p>2.后端输出时过滤，对于String类型的输出，不要直接使用EL表达式，可以使用Jstl的<code>&lt;c:out value=&quot;${yourVar}&quot; escapleXml=&quot;true&quot;/&gt;&lt;/c:out&gt;</code>，其中<code>escapleXml</code>缺省时，默认为<code>true</code>，这个标签会对<code>&lt;</code>、<code>&gt;</code>、<code>&amp;</code>等的字符做转义，而EL不会。</p><h5 id="前端处理"><a href="#前端处理" class="headerlink" title="前端处理"></a>前端处理</h5><p>Js不会,所以只做简单介绍</p><p>1.前端通过js提交请求时，做提交内容转码处理</p><p>2.或对后端响应的页面做转码处理。</p>]]></content>
     
