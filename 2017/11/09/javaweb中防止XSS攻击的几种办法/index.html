@@ -5,7 +5,7 @@
 </blockquote>
 <h2 id="XSS的防范"><a href="#XSS的防范" class="headerlink" title="XSS的防范"></a>XSS的防范</h2><p> 按Http请求的流程,在四个阶段可做处理。</p>
 <h5 id="后端处理"><a href="#后端处理" class="headerlink" title="后端处理"></a>后端处理</h5><p>1.后端输入时过滤，可以对用户提交数据做过滤，比如是对HttpServletRequest中，通过getParameter(“xxx”)获取值后做字符过滤，具体使用到可配置过滤器对请求包装成HttpServletRequestWrapper对象，然后在交由Controller处理。</p>
-<p>2.后端输出时过滤，对于String类型的输出，不要直接使用EL表达式，可以使用Jstl的<code>&lt;c:out value=&quot;${yourVar}&quot; escapleXml=&quot;true&quot;/&gt;&lt;/c:out&gt;</code>，其中<code>escapleXml</code>缺省时，默认为<code>true</code>，这个标签会对<code>&lt;</code>,<br><code>&gt;</code>、<code>&amp;</code>等的字符做转义，而EL不会。</p>
+<p>2.后端输出时过滤，对于String类型的输出，不要直接使用EL表达式，可以使用Jstl的<code>&lt;c:out value=&quot;${yourVar}&quot; escapleXml=&quot;true&quot;/&gt;&lt;/c:out&gt;</code>，其中<code>escapleXml</code>缺省时，默认为<code>true</code>，这个标签会对<code>&lt;</code>、<code>&gt;</code>、<code>&amp;</code>等的字符做转义，而EL不会。</p>
 <h5 id="前端处理"><a href="#前端处理" class="headerlink" title="前端处理"></a>前端处理</h5><p>Js不会,所以只做简单介绍</p>
 <p>1.前端通过js提交请求时，做提交内容转码处理</p>
 <p>2.或对后端响应的页面做转码处理。</p>
