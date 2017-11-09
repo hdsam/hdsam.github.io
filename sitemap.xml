@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/11/09/javaweb%E4%B8%AD%E9%98%B2%E6%AD%A2XSS%E6%94%BB%E5%87%BB%E7%9A%84%E5%87%A0%E7%A7%8D%E5%8A%9E%E6%B3%95/</loc>
+    
+    <lastmod>2017-11-09T04:37:04.360Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/11/03/%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AEContentType%E7%9A%84%E5%87%A0%E7%A7%8D%E5%BD%A2%E5%BC%8F/</loc>
     
-    <lastmod>2017-11-03T11:00:21.441Z</lastmod>
+    <lastmod>2017-11-05T13:52:49.665Z</lastmod>
     
   </url>
   
@@ -12,13 +19,6 @@
     <loc>http://yoursite.com/2017/11/01/intro/</loc>
     
     <lastmod>2017-11-03T10:54:35.446Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/11/03/%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AEContentType%E7%9A%84%E5%87%A0%E7%A7%8D%E5%BD%A2%E5%BC%8F/</loc>
-    
-    <lastmod>2017-11-03T05:33:12.518Z</lastmod>
     
   </url>
   
